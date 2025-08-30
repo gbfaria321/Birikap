@@ -1,0 +1,1813 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birikap Tapetes Personalizados</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="assets/ico.ico" type="image/x-icon">
+    <style>
+        /* Estilos globais para a página */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Estilos do cabeçalho principal */
+        .main-header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+
+        .main-header .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 1200px;
+        }
+
+        @media (min-width: 768px) {
+            .main-header .container {
+                flex-direction: row;
+            }
+        }
+
+        /* Estilos dos links de navegação */
+        .nav-link {
+            color: #326168;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, transform 0.2s ease-in-out;
+        }
+
+        .nav-link:hover {
+            background-color: #F6706D;
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        /* Estilos do card de produto */
+        .product-card {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            border-radius: 0.75rem;
+            overflow: hidden;
+            background-color: #ffffff;
+            border: 1px solid #A8A9AB;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Estilos do botão do WhatsApp */
+        .whatsapp-button {
+            background-color: #326168;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+
+        .whatsapp-button:hover {
+            background-color: #F6706D;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(50, 97, 104, 0.4);
+        }
+        
+        /* Estilo para os novos botões da seção de produtos */
+        .catalog-button {
+            background-color: #F6706D;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            gap: 0.5rem;
+            transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+
+        .catalog-button:hover {
+            background-color: #326168; /* Cor azul no hover */
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(50, 97, 104, 0.4); /* Sombra correspondente */
+        }
+
+        .download-button {
+            background-color: #326168;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            gap: 0.5rem;
+            transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+
+        .download-button:hover {
+            background-color: #F6706D;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(50, 97, 104, 0.4);
+        }
+
+        .learn-more-button {
+            background-color: #326168;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            gap: 0.5rem;
+            transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+
+        .learn-more-button:hover {
+            background-color: #326168;
+            filter: brightness(110%);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(50, 97, 104, 0.4);
+        }
+
+        /* Estilos do contêiner do carrossel de banners */
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .carousel-slide {
+            display: flex;
+            position: relative;
+            width: 100%;
+            height: 400px;
+        }
+        
+        @media (min-width: 1024px) {
+            .carousel-slide {
+                height: 400px; /* Altura fixa para desktop */
+            }
+        }
+        
+        .carousel-slide img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .carousel-slide img.active {
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .carousel-slide {
+                height: 50vh; /* Altura responsiva para mobile */
+            }
+        }
+
+        /* Estilos dos botões do carrossel */
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.4);
+            color: white;
+            padding: 1rem;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 10;
+            transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+        }
+
+        .carousel-button:hover {
+            background-color: rgba(0, 0, 0, 0.6);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-button.left {
+            left: 1.5rem;
+        }
+
+        .carousel-button.right {
+            right: 1.5rem;
+        }
+
+        /* Estilos do recurso de ícone */
+        .icon-feature {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            background-color: #f8fafc;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+
+        .icon-feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .icon-feature img {
+            height: 3rem;
+            width: auto;
+            margin-bottom: 0.75rem;
+            filter: invert(40%) sepia(90%) saturate(1000%) hue-rotate(330deg) brightness(100%) contrast(100%);
+            transition: transform 0.2s ease-in-out, filter 0.2s ease-in-out;
+        }
+
+        .icon-feature:hover img {
+            transform: scale(1.1);
+            filter: invert(20%) sepia(50%) saturate(2000%) hue-rotate(180deg) brightness(80%) contrast(100%);
+        }
+
+        /* Estilos da navegação principal */
+        .main-nav {
+            background-color: #326168;
+            border-radius: 0.5rem;
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        .main-nav .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 1200px;
+        }
+        
+        /* Estilos para o menu hambúrguer */
+        .hamburger-menu {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 2rem;
+            height: 2rem;
+            background: transparent;
+            border: none;
+            z-index: 20;
+        }
+
+        .hamburger-menu span {
+            width: 2rem;
+            height: 0.25rem;
+            background: #326168;
+            border-radius: 10px;
+            transition: all 0.3s linear;
+            position: relative;
+        }
+
+        @media (max-width: 767px) {
+            .hamburger-menu {
+                display: flex;
+            }
+
+            .main-nav {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: #ffffff;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+                border-radius: 0;
+                position: absolute;
+                top: 110px;
+                left: 0;
+                z-index: 10;
+                padding: 1rem 0;
+            }
+
+            .main-nav.active {
+                display: flex;
+            }
+            
+            .main-nav .container {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+            }
+
+            .main-nav .nav-link, .dropdown .nav-link {
+                width: 100%;
+                text-align: center;
+                color: #326168;
+            }
+
+            .main-nav .nav-link:hover {
+                background-color: #f3f4f6;
+            }
+            
+            .dropdown-menu {
+                position: static;
+                width: 100%;
+                box-shadow: none;
+                animation: none;
+            }
+            
+            .dropdown-menu a {
+                padding-left: 2rem;
+            }
+        }
+
+
+        @media (min-width: 768px) {
+            .main-nav .container {
+                gap: 2rem;
+            }
+            .main-nav {
+                display: block;
+            }
+        }
+
+        .main-nav .nav-link {
+            color: #ffffff;
+        }
+
+        .main-nav .nav-link:hover {
+            background-color: #F6706D;
+        }
+        
+        .main-nav .dropdown-menu a {
+            color: #326168;
+        }
+
+        .main-nav .dropdown-menu a:hover {
+            background-color: #f3f4f6;
+            color: #F6706D;
+        }
+
+        /* Estilos do botão de acesso */
+        .access-button {
+            background-color: #F6706D;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            font-weight: 600;
+            transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+        }
+
+        .access-button:hover {
+            background-color:#326168;
+            transform: scale(1.05);
+        }
+
+        /* Estilos do dropdown menu */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            display: none;
+            background-color: white;
+            color: #326168;
+            border-radius: 0.375rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            min-width: 200px;
+            z-index: 20;
+            animation: fade-in-down 0.3s ease-out;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 0.5rem 1rem;
+            color: #326168;
+            transition: background-color 0.2s ease-in-out;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #f3f4f6;
+        }
+
+        /* Animação para o dropdown */
+        @keyframes fade-in-down {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Layout de grid para produtos e ícones de destaque */
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 640px) {
+            .grid-layout.sm-cols-2 {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (min-width: 768px) {
+            .grid-layout.md-cols-3 {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .grid-layout.lg-cols-4 {
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+            }
+            .grid-layout.lg-cols-5 {
+                grid-template-columns: repeat(5, minmax(0, 1fr));
+            }
+        }
+
+        /* Estilos para o título das seções de produto */
+        .product-section-title {
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #1e3a8a;
+        }
+
+        /* Estilos para o preço riscado de produtos em promoção */
+        .product-price-old {
+            color: #6b7280;
+            text-decoration: line-through;
+        }
+
+        /* Estilos para o preço de promoção */
+        .product-price-new {
+            color: #dc2626;
+            font-weight: bold;
+            font-size: 1.125rem;
+        }
+
+        /* Estilos para o selo "OFF" */
+        .product-off-badge {
+            font-size: 0.875rem;
+            background-color: #fee2e2;
+            color: #dc2626;
+            padding: 0.25rem 0.5rem;
+            border-radius: 9999px;
+            margin-left: 0.5rem;
+        }
+        
+        /* Novo estilo para o card de produto com imagem */
+        .product-card-with-image {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            border-radius: 0.75rem;
+            overflow: hidden;
+            background-color: #ffffff;
+            border: 1px solid #A8A9AB;
+            position: relative;
+            padding-bottom: 1rem; /* Espaço para o texto abaixo */
+        }
+        
+        .product-card-with-image:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .product-image-container {
+            width: 100%;
+            height: 200px; /* Altura fixa para as imagens */
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+
+        /* Estilos do rodapé */
+        footer {
+            background-color: #ffffff;
+            padding-top: 2rem;
+            box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05);
+            margin-top: auto;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        footer .container {
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .footer-links-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            width: 100%;
+        }
+        
+        @media (min-width: 768px) {
+            .footer-links-section {
+                gap: 2rem;
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        .footer-links-section > div {
+            flex: 1 1 auto;
+            min-width: 150px;
+            text-align: left;
+        }
+
+        .footer-links-section h3 {
+            text-align: left;
+            margin-bottom: 0.5rem;
+            color: #326168;
+        }
+
+        .footer-social-icons {
+            display: flex;
+            justify-content: flex-start;
+            gap: 0.75rem;
+            margin-top: 0.75rem;
+        }
+
+        /* Estilo para ícones sociais no rodapé */
+        .footer-social-icons a {
+            font-size: 1.5rem;
+            transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+            color: #A8A9AB;
+        }
+
+        .footer-social-icons a:hover {
+            transform: scale(1.1);
+            color: #F6706D; /* Cor vermelha no hover */
+        }
+        
+        .footer-links-section a:hover {
+            color: #F6706D; /* Cor vermelha no hover para os links de texto */
+        }
+
+
+        .footer-contact-info .flex {
+            justify-content: flex-start;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-contact-info .flex i {
+            font-size: 1.2rem;
+            margin-right: 0.5rem;
+            color: #A8A9AB;
+        }
+
+        /* Estilo para os ícones de contato no rodapé */
+        .footer-contact-info a {
+            transition: color 0.2s ease-in-out;
+        }
+
+        .footer-contact-info a:hover {
+            color: #F6706D; /* Cor vermelha no hover */
+        }
+        
+        .footer-payment-security {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+            width: 100%;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 1.5rem;
+        }
+
+        @media (max-width: 767px) {
+            .footer-payment-security {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        .footer-payment-security img {
+            height: 30px;
+            margin: 0 0.3rem;
+        }
+
+        /* Estilos do copyright */
+        .footer-copyright {
+            background-color: #e2e8f0;
+            padding: 0.5rem 1rem;
+            text-align: center;
+            color: #4a5568;
+            font-size: 0.75rem;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        /* Ajuste do tamanho do ícone do produto */
+        .product-card-with-image .product-icon-container img {
+            width: 2.5rem;
+            height: 2.5rem;
+            filter: none;
+        }
+
+        /* Estilos para o botão flutuante do WhatsApp e modal de contato */
+        .floating-whatsapp-button {
+            position: fixed;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            background-color: #25D366;
+            color: white;
+            padding: 1rem;
+            border-radius: 50%;
+            font-size: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 100;
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .floating-whatsapp-button:hover {
+            transform: scale(1.1);
+        }
+
+        .contact-modal {
+            position: fixed;
+            bottom: 6rem;
+            right: 1.5rem;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, visibility 0.3s ease-in-out;
+            transform: translateY(20px);
+        }
+
+        .contact-modal.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .contact-modal-content {
+            background-color: white;
+            padding: 0;
+            border-radius: 0.75rem;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            width: 90vw;
+            max-width: 420px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            max-height: 450px;
+        }
+        
+        #rd-close_button-kxguex0i {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            border: none;
+            background: transparent;
+            z-index: 9999;
+            cursor: pointer;
+            width: 40px;
+            height:40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #rd-close_button-kxguex0i svg {
+            width: 20px;
+            height: 20px;
+            fill: #326168;
+            transition: fill 0.2s ease-in-out;
+        }
+        #rd-close_button-kxguex0i:hover svg {
+            fill: #F6706D;
+        }
+
+        #rd-section-k8hluh9z {
+            background-color: #F3F4F6;
+            border-bottom-style: none;
+            border-color: #000000;
+            border-left-style: none;
+            border-radius: 0px;
+            border-right-style: none;
+            border-top-style: none;
+            border-width: 1px;
+            padding: 10px 15px;
+            display: flex;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        #rd-section-k8hluh9z > div {
+            min-height: 0px;
+        }
+
+        #rd-image-kd8udzxl {
+            margin-top: 5px;
+            margin-bottom: 5px;
+            align-self: center;
+            max-width: 40px;
+        }
+
+        #rd-image-kd8udzxl a,
+        #rd-image-kd8udzxl img {
+            width: 40px;
+            max-width: 100%;
+            height: auto;
+            border-bottom-style: none;
+            border-color: #000000;
+            border-left-style: none;
+            border-radius: 100px;
+            border-right-style: none;
+            border-top-style: none;
+            border-width: 1px;
+        }
+
+        #rd-text-dk3tvgr2 {
+            display: block;
+            margin-top: 5px;
+            margin-bottom: 0px;
+            align-self: flex-start;
+            word-break: break-word;
+            margin-left: 10px;
+            flex-grow: 1;
+        }
+
+        #rd-text-dk3tvgr2 p {
+            line-height: 1;
+        }
+
+        #rd-text-dk3tvgr2 strong {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            color: #326168;
+        }
+
+        #rd-text-kd5tygr3 {
+            display: block;
+            margin-top: 0px;
+            margin-bottom: 5px;
+            align-self: flex-start;
+            word-break: break-word;
+            margin-left: 10px;
+            flex-grow: 1;
+        }
+
+        #rd-text-kd5tygr3 span {
+            font-size: 12px;
+            color: #4b5563;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .contact-modal-body {
+            background-color: #f8fafc;
+            background-position-x: 50%;
+            background-position-y: 100%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: scroll;
+            padding: 15px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            position: relative;
+        }
+
+        #rd-box-kd0h0qwg {
+            background-color: transparent;
+            border: none;
+            border-radius: 12px;
+            padding: 12px;
+            min-height: -1px;
+            margin-top: 0;
+            margin-bottom: 15px;
+            max-width: 100%;
+            align-self: flex-start;
+            display: flex;
+            flex-direction: column;
+            box-shadow: none;
+            position: relative;
+        }
+        
+        #rd-box-kd0h0qwg::before,
+        #rd-box-kd0h0qwg::after {
+            content: none;
+        }
+
+        #rd-text-kd0gxbsf {
+            display: block;
+            margin: 0;
+            color: #4b5563;
+            font-size: 14px;
+            font-family: 'Open Sans', sans-serif;
+            word-break: break-word;
+            background-color: #FFFFFF;
+            border: 1px solid #d1d5db;
+            border-radius: 12px;
+            padding: 12px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        #whatsapp-form {
+            align-self: center;
+            width: 100%;
+            background-color: transparent;
+            padding-top: 0;
+            padding-bottom: 15px;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        #whatsapp-form .bricks-form__fieldset {
+            display: flex;
+            flex-flow: column nowrap;
+        }
+
+        #whatsapp-form .bricks-form__field {
+            margin-bottom: 10px;
+            padding: 0;
+            width: 100%;
+        }
+
+        #whatsapp-form label {
+            display: none;
+        }
+
+        #whatsapp-form input[type="email"],
+        #whatsapp-form input[type="text"],
+        #whatsapp-form input[type="tel"] {
+            color: #4a4a4a;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 14px;
+            background-color: #ffffff;
+            border: solid 1px #d1d5db;
+            border-radius: 12px;
+            height: 40px;
+            padding: 10px 15px;
+            width: 100%;
+        }
+
+        #whatsapp-form input::placeholder {
+            color: #9ca3af;
+        }
+
+
+        #whatsapp-form button[type="submit"] {
+            background-color: #326168;
+            color: #FFFFFF;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: normal;
+            height: 40px;
+            width: 90%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+            margin-top: 5px;
+        }
+        
+        #whatsapp-form button[type="submit"]:hover {
+            background-color: #F6706D;
+        }
+
+        /* Estilos do carrossel de depoimentos */
+        .testimonials-carousel-container-new {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 4rem;
+        }
+
+        .testimonials-carousel-track-new {
+            position: relative;
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+        }
+
+        .testimonials-carousel-item-new {
+            width: 100%;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: opacity 0.5s ease-in-out;
+            z-index: 1;
+        }
+
+        .testimonials-carousel-item-new.active {
+            opacity: 1;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .testimonials-carousel-button-new {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(50, 97, 104, 0.8);
+            color: white;
+            padding: 0.75rem 1rem;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 10;
+            transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border: none;
+        }
+
+        .testimonials-carousel-button-new:hover {
+            background-color: #F6706D;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .testimonials-carousel-button-new.left {
+            left: 0;
+        }
+
+        .testimonials-carousel-button-new.right {
+            right: 0;
+        }
+
+        /* Estilos para o título da seção de depoimentos */
+        .testimonials-section-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #326168;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .testimonials-section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: #F6706D;
+            border-radius: 2px;
+        }
+        
+        /* Estilo para o título da seção de produtos */
+        .products-section-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #326168;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .products-section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: #F6706D;
+            border-radius: 2px;
+        }
+
+        /* Estilos para o card de depoimento */
+        .testimonial-card {
+            background-color: #f8fafc;
+            border-radius: 0.75rem;
+            padding: 2rem;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .testimonial-card p.italic {
+            font-style: italic;
+            color: #4b5563;
+            margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+
+        .testimonial-card .author-info {
+            display: flex;
+            align-items: center;
+            margin-top: 1rem;
+        }
+
+        .testimonial-card .author-info img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 1rem;
+            border: 2px solid #326168;
+        }
+
+        .testimonial-card .author-details {
+            text-align: left;
+        }
+
+        .testimonial-card .author-details .font-bold {
+            color: #326168;
+        }
+
+        .testimonial-card .author-details .text-sm {
+            color: #F6706D;
+        }
+
+        .testimonial-card .stars {
+            color: #F6706D;
+            margin-top: 0.5rem;
+        }
+        /* Nova classe para estilizar o SVG/IMG */
+        .product-icon {
+            width: 4rem; /* Equivalente a text-6xl do Tailwind, um pouco mais para a imagem */
+            height: 4rem;
+            margin-bottom: 1rem;
+            filter: grayscale(100%);
+        }
+
+        /* Estilo para os ícones de produto dentro do card com imagem */
+        .product-card-with-image .product-icon-container {
+            position: absolute;
+            top: -1.5rem; /* Ajusta para ficar acima do card */
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: white;
+            padding: 0.75rem;
+            border-radius: 9999px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            z-index: 1;
+        }
+        
+        .product-card-with-image .product-icon-container:hover {
+            transform: translateX(-50%) scale(1.1);
+        }
+
+        .product-card-with-image .product-text-content {
+            padding-top: 2rem;
+            text-align: center;
+        }
+
+        /* Estilos do header */
+        .header-link-container {
+            display: flex;
+            align-items: center;
+            color: #326168; /* Cor padrão azul */
+            transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
+        }
+
+        .header-link-container:hover {
+            color: #F6706D; /* Cor do hover vermelha */
+            transform: translateY(-2px);
+        }
+
+        /* Estilo para os ícones sociais no rodapé */
+        .footer-social-icons a {
+            font-size: 1.5rem;
+            transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
+            color: #A8A9AB;
+        }
+
+        .footer-social-icons a:hover {
+            transform: scale(1.1);
+            color: #F6706D; /* Cor vermelha no hover */
+        }
+        
+        .footer-links-section a:hover {
+            color: #F6706D; /* Cor vermelha no hover para os links de texto */
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container">
+            <!-- Barra de navegação e busca -->
+            <div class="flex items-center justify-between w-full md:w-auto">
+                <a href="#">
+                    <img src="assets/logo.png" alt="Birikap Tapetes Personalizados Logo" class="h-12 md:h-16 w-auto rounded-md">
+                </a>
+                <div class="flex items-center space-x-4 md:hidden">
+                    <a href="#" class="header-link-container">
+                        <i class="fas fa-question-circle text-lg"></i>
+                    </a>
+                    <a href="#" class="header-link-container">
+                        <i class="fas fa-phone-alt text-lg"></i>
+                    </a>
+                    <button class="hamburger-menu" id="hamburger-menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Pesquisa e links de contato (visível em desktop) -->
+            <div class="flex-grow max-w-xl w-full mx-auto my-4 md:my-0">
+                <div class="relative w-full">
+                    <input type="text" placeholder="O que você está buscando?" class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all duration-300">
+                    <i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                </div>
+            </div>
+            
+            <div class="hidden md:flex items-center space-x-6">
+                <!-- Contatos -->
+                <a href="#" class="header-link-container">
+                    <i class="fas fa-phone-alt text-2xl"></i>
+                    <span class="ml-2 hidden md:block">Contatos</span>
+                </a>
+                <!-- Dúvidas -->
+                <a href="#" class="header-link-container">
+                    <i class="fas fa-question-circle text-2xl"></i>
+                    <span class="ml-2 hidden md:block">Dúvidas</span>
+                </a>
+                <!-- Promoções -->
+                <a href="#" class="header-link-container relative">
+                    <i class="fas fa-tag text-2xl"></i>
+                    <span class="ml-2 hidden md:block">Promoções</span>
+                </a>
+                <a href="#" class="access-button">Acessar</a>
+            </div>
+        </div>
+
+        <nav class="main-nav" id="main-nav">
+            <div class="container">
+                <a href="index.html" class="nav-link">Início</a>
+                <a href="#" class="nav-link">Ajuda</a>
+                <a href="#" class="nav-link">Políticas</a>
+                <a href="sobre.html" class="nav-link">Sobre Nós</a>
+                <a href="#" class="nav-link">Catálogo</a>
+                <div class="dropdown">
+                    <a href="#" class="nav-link flex items-center">
+                        Tapetes <i class="fas fa-angle-down ml-2 transition-transform group-hover:rotate-180"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="#">Tapete de Entrada para Apartamentos</a>
+                        <a href="#">Tapete para Escolas Infantis Decorativos</a>
+                        <a href="#">Tapetes Personalizados Cleankap</a>
+                        <a href="#">Tapetes Personalizados Gold</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="#" class="nav-link flex items-center">
+                        Pisos <i class="fas fa-angle-down ml-2 transition-transform group-hover:rotate-180"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="#">Pisos Laminados 100% PVC (Moeda e Bus)</a>
+                        <a href="#">Pisos para Academias e Playgrounds</a>
+                        <a href="#">Pisos para Áreas Úmidas</a>
+                    </div>
+                </div>
+                <a href="#" class="nav-link">Gramas Sintéticas</a>
+            </div>
+        </nav>
+    </header>
+
+    <main style="flex-grow: 1;">
+        <section class="carousel-container">
+            <div class="carousel-slide" id="banner-carousel-slide">
+                <img src="assets/banner1.png" alt="Banner 1" class="active">
+                <img src="assets/banner2.png" alt="Banner 2">
+            </div>
+            <button class="carousel-button left" id="prev-banner" aria-label="Previous Banner"><i class="fas fa-chevron-left"></i></button>
+            <button class="carousel-button right" id="next-banner" aria-label="Next Banner"><i class="fas fa-chevron-right"></i></button>
+        </section>
+
+        <section class="bg-white py-8 shadow-md rounded-lg mx-auto max-w-6xl -mt-8 relative z-10 grid-layout sm-cols-2 md-cols-3 lg-cols-5 px-4">
+            <div class="icon-feature">
+                <img src="https://img.icons8.com/?size=100&id=22185&format=png&color=000000" alt="Ícone de Pagamento">
+                <h3 class="font-bold text-lg">SE NÓS PARCELAMOS?</h3>
+                <p class="text-sm text-gray-600">PARCELAMOS TUDO NO CARTÃO DE CRÉDITO.</p>
+            </div>
+            <div class="icon-feature">
+                <img src="https://img.icons8.com/?size=100&id=7891&format=png&color=000000" alt="Ícone de Mapa">
+                <h3 class="font-bold text-lg">ONDE ATENDEMOS?</h3>
+                <p class="text-sm text-gray-600">TODA BIRIGUI E REGIÃO.</p>
+            </div>
+            <div class="icon-feature">
+                <img src="https://img.icons8.com/?size=100&id=10486&format=png&color=000000" alt="Ícone de Segurança">
+                <h3 class="font-bold text-lg">SE O SITE É SEGURO?</h3>
+                <p class="text-sm text-gray-600">TEMOS CERTIFICADO SSL DE SEGURANÇA.</p>
+            </div>
+            <div class="icon-feature">
+                <img src="https://img.icons8.com/?size=100&id=9761&format=png&color=000000" alt="Ícone de Qualidade">
+                <h3 class="font-bold text-lg">NOSSOS PRODUTOS?</h3>
+                <p class="text-sm text-gray-600">DE ALTÍSSIMA QUALIDADE.</p>
+            </div>
+            <div class="icon-feature">
+                <img src="https://img.icons8.com/?size=100&id=16733&format=png&color=000000" alt="Ícone de Dúvida">
+                <h3 class="font-bold text-lg">FICOU COM DÚVIDA?</h3>
+                <p class="text-sm text-gray-600">CHAME NO WHATSAPP.</p>
+            </div>
+        </section>
+
+        <section class="container mx-auto py-12 px-4">
+            <h2 class="products-section-title">NOSSOS PRODUTOS</h2>
+            <div class="grid-layout sm-cols-2 md-cols-3 lg-cols-4">
+                
+                <div class="bg-white rounded-lg shadow-md product-card-with-image flex flex-col justify-between">
+                    <div>
+                        <div class="product-icon-container">
+                            <img src="https://img.icons8.com/?size=100&id=802&format=png&color=000000" alt="Ícone de Grama Sintética">
+                        </div>
+                        <div class="product-image-container">
+                            <img src="assets/grama.png" alt="Grama Sintética" class="product-image">
+                        </div>
+                        <div class="p-4 text-center">
+                            <h3 class="font-semibold text-xl text-gray-800">Grama Sintética</h3>
+                            <p class="text-gray-600 mt-2 text-sm">Ideal para jardins, playgrounds, ambientes internos e externos, proporcionando beleza e praticidade.</p>
+                        </div>
+                    </div>
+                    <div class="p-4 pt-0 space-y-2">
+                        <a href="https://cooperkap.com.br/tapetes-e-capachos/grama-sintetica/" class="catalog-button w-full text-center" target="_blank">
+                            Clique para ver no catálogo
+                        </a>
+                        <a href="https://cooperkap.com.br/tapetes-e-capachos/grama-sintetica/" class="learn-more-button w-full text-center" target="_blank">
+                            Saiba Mais
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md product-card-with-image flex flex-col justify-between">
+                    <div>
+                        <div class="product-icon-container">
+                            <img src="https://img.icons8.com/?size=100&id=62278&format=png&color=000000" alt="Ícone de Pisos para Áreas Úmidas">
+                        </div>
+                        <div class="product-image-container">
+                            <img src="assets/umida.png" alt="Pisos para Áreas Úmidas" class="product-image">
+                        </div>
+                        <div class="p-4 text-center">
+                            <h3 class="font-semibold text-xl text-gray-800">Pisos para Áreas Úmidas</h3>
+                            <p class="text-gray-600 mt-2 text-sm">Pisos antiderrapantes e resistentes para piscinas, saunas, vestiários e banheiros, garantindo segurança e higiene.</p>
+                        </div>
+                    </div>
+                    <div class="p-4 pt-0 space-y-2">
+                        <a href="https://cooperkap.com.br/piso-areas-umidas/" class="catalog-button w-full text-center" target="_blank">
+                            Clique para ver no catálogo
+                        </a>
+                        <a href="https://cooperkap.com.br/piso-areas-umidas/" class="learn-more-button w-full text-center" target="_blank">
+                            Saiba Mais
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md product-card-with-image flex flex-col justify-between">
+                    <div>
+                        <div class="product-icon-container">
+                            <img src="https://img.icons8.com/?size=100&id=o6vfITePsJll&format=png&color=000000" alt="Ícone de Tapetes Exclusivos">
+                        </div>
+                        <div class="product-image-container">
+                            <img src="assets/tapete2.png" alt="Tapetes Exclusivos" class="product-image">
+                        </div>
+                        <div class="p-4 text-center">
+                            <h3 class="font-semibold text-xl text-gray-800">Tapetes Exclusivos</h3>
+                            <p class="text-gray-600 mt-2 text-sm">Designs únicos e personalizados para valorizar a entrada e a identidade visual de sua empresa ou residência.</p>
+                        </div>
+                    </div>
+                    <div class="p-4 pt-0 space-y-2">
+                        <a href="https://cooperkap.com.br/tapetes-exclusivos/" class="catalog-button w-full text-center" target="_blank">
+                            Clique para ver no catálogo
+                        </a>
+                        <a href="https://cooperkap.com.br/tapetes-exclusivos/" class="learn-more-button w-full text-center" target="_blank">
+                            Saiba Mais
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md product-card-with-image flex flex-col justify-between">
+                    <div>
+                        <div class="product-icon-container">
+                            <img src="https://img.icons8.com/?size=100&id=8466&format=png&color=000000" alt="Ícone de Tapetes Personalizados">
+                        </div>
+                        <div class="product-image-container">
+                            <img src="assets/tapete1.png" alt="Tapetes e Capachos Personalizados" class="product-image">
+                        </div>
+                        <div class="p-4 text-center">
+                            <h3 class="font-semibold text-xl text-gray-800">Tapetes e Capachos Personalizados</h3>
+                            <p class="text-gray-600 mt-2 text-sm">Crie tapetes com sua logo, frases ou designs exclusivos. Perfeitos para reforçar sua marca e causar uma boa impressão.</p>
+                        </div>
+                    </div>
+                    <div class="p-4 pt-0 space-y-2">
+                        <a href="https://cooperkap.com.br/tapetes-e-capachos-personalizados/" class="catalog-button w-full text-center" target="_blank">
+                            Clique para ver no catálogo
+                        </a>
+                        <a href="https://cooperkap.com.br/tapetes-e-capachos-personalizados/" class="learn-more-button w-full text-center" target="_blank">
+                            Saiba Mais
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4 mt-8">
+                <a href="https://cooperkap.com.br/" class="catalog-button px-8 py-4 text-lg rounded-full shadow-lg">
+                    Clique para ver o catálogo completo
+                </a>
+                <a href="/caminho/do/seu/catalogo.pdf" class="download-button px-8 py-4 text-lg rounded-full shadow-lg" download>
+                    Baixar Catálogo
+                </a>
+            </div>
+        </section>
+
+        <section class="py-12 px-4 testimonials-section">
+            <div class="container mx-auto">
+                <h2 class="testimonials-section-title">O QUE DIZEM NOSSOS CLIENTES</h2>
+                <div class="testimonials-carousel-container-new">
+                    <button class="testimonials-carousel-button-new left" id="prev-testimonial">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="testimonials-carousel-track-new" id="testimonials-carousel-track">
+                        <div class="testimonials-carousel-item-new active">
+                            <div class="testimonial-card">
+                                <p class="italic">"Comprei e simplesmente adorei! Fui muito bem atendido e o produto chegou certinho. Com certeza vou comprar de novo!"</p>
+                                <div class="author-info">
+                                    <img src="https://placehold.co/50x50/326168/FFFFFF?text=LC" alt="Foto de Lucas C.">
+                                    <div class="author-details">
+                                        <p class="font-bold">Lucas C.</p>
+                                        <p class="text-sm">Birigui - SP</p>
+                                    </div>
+                                </div>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonials-carousel-item-new">
+                            <div class="testimonial-card">
+                                <p class="italic">"Excelente qualidade e atendimento impecável! Meus tapetes ficaram perfeitos no meu escritório!"</p>
+                                <div class="author-info">
+                                    <img src="https://placehold.co/50x50/326168/FFFFFF?text=CG" alt="Foto de Camila G.">
+                                    <div class="author-details">
+                                        <p class="font-bold">Camila G.</p>
+                                        <p class="text-sm">Birigui - SP</p>
+                                    </div>
+                                </div>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonials-carousel-item-new">
+                            <div class="testimonial-card">
+                                <p class="italic">"Fiquei impressionado com a rapidez na entrega e a qualidade do tapete. Superou minhas expectativas!"</p>
+                                <div class="author-info">
+                                    <img src="https://placehold.co/50x50/326168/FFFFFF?text=GS" alt="Foto de Guilherme S.">
+                                    <div class="author-details">
+                                        <p class="font-bold">Guilherme S.</p>
+                                        <p class="text-sm">Araçatuba - SP</p>
+                                    </div>
+                                </div>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonials-carousel-item-new">
+                            <div class="testimonial-card">
+                                <p class="italic">"Produto de alta qualidade e atendimento excepcional. Recomendo a todos que buscam o melhor!"</p>
+                                <div class="author-info">
+                                    <img src="https://placehold.co/50x50/326168/FFFFFF?text=MA" alt="Foto de Maria A.">
+                                    <div class="author-details">
+                                        <p class="font-bold">Maria C.</p>
+                                        <p class="text-sm">Penápolis - SP</p>
+                                    </div>
+                                </div>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonials-carousel-item-new">
+                            <div class="testimonial-card">
+                                <p class="italic">"Fiquei muito feliz com a compra. O tapete superou minhas expectativas em termos de beleza e durabilidade."</p>
+                                <div class="author-info">
+                                    <img src="https://placehold.co/50x50/326168/FFFFFF?text=JP" alt="Foto de João P.">
+                                    <div class="author-details">
+                                        <p class="font-bold">João P.</p>
+                                        <p class="text-sm">Coroados - SP</p>
+                                    </div>
+                                </div>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonials-carousel-item-new">
+                            <div class="testimonial-card">
+                                <p class="italic">"Atendimento rápido e eficiente. O produto chegou antes do prazo e com a qualidade esperada. Virei cliente!"</p>
+                                <div class="author-info">
+                                    <img src="https://placehold.co/50x50/326168/FFFFFF?text=AF" alt="Foto de Ana F.">
+                                    <div class="author-details">
+                                        <p class="font-bold">Ana P.</p>
+                                        <p class="text-sm">Bilac - SP</p>
+                                    </div>
+                                </div>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonials-carousel-item-new">
+                            <div class="testimonial-card">
+                                <p class="italic">"Os tapetes personalizados são incríveis! Exatamente como eu imaginei. Superou minhas expectativas."</p>
+                                <div class="author-info">
+                                    <img src="https://placehold.co/50x50/326168/FFFFFF?text=RB" alt="Foto de Roberto B.">
+                                    <div class="author-details">
+                                        <p class="font-bold">Roberto R.</p>
+                                        <p class="text-sm">Birigui - SP</p>
+                                    </div>
+                                </div>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonials-carousel-item-new">
+                            <div class="testimonial-card">
+                                <p class="italic">"Qualidade e preço justos. Recomendo a Birikap para todos que procuram por produtos de alto nível."</p>
+                                <div class="author-info">
+                                    <img src="https://placehold.co/50x50/326168/FFFFFF?text=CS" alt="Foto de Carla S.">
+                                    <div class="author-details">
+                                        <p class="font-bold">Carla S.</p>
+                                        <p class="text-sm">Araçatuba - SP</p>
+                                    </div>
+                                </div>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="testimonials-carousel-button-new left" id="prev-testimonial">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="testimonials-carousel-button-new right" id="next-testimonial">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-white shadow-md">
+        <div class="container mx-auto px-4 text-center">
+            <div class="footer-links-section">
+                <div class="flex flex-col items-center md:items-start">
+                    <img src="assets/mini ico.png" alt="Birikap Tapetes Personalizados Logo" class="h-14 w-auto mb-3 rounded-md transition-transform duration-300 hover:scale-105">
+                    <p class="text-sm text-gray-600 mb-2">Nosso compromisso é com a qualidade, a personalização</p>
+                        <p class="text-sm text-gray-600 mb-2">e a inovação, oferecendo soluções em tapetes,</p>
+                        <p class="text-sm text-gray-600 mb-2">pisos e gramas sintéticas!</p>
+                    <div class="footer-social-icons">
+                        <a href="https://wa.me/5518996035201" target="_blank" class="text-gray-500 hover:text-red-500 transition-colors duration-300">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="https://www.instagram.com/birikap.tapetespersonalizados/" target="_blank" class="text-gray-500 hover:text-red-500 transition-colors duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=100092820801447" target="_blank" class="text-gray-500 hover:text-red-500 transition-colors duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold text-ciano mb-2">Nossos Produtos</h3>
+                    <ul class="space-y-1 text-sm">
+                        <li><a href="#" class="text-gray-600 hover:text-red-500 transition-colors duration-200">Pisos</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-red-500 transition-colors duration-200">Tapetes</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-red-500 transition-colors duration-200">Tapetes Personalizados</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-red-500 transition-colors duration-200">Gramas Sintéticas</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold text-ciano mb-2">Informações</h3>
+                    <ul class="space-y-1 text-sm">
+                        <li><a href="#" class="text-gray-600 hover:text-red-500 transition-colors duration-200">Sobre Nós</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-red-500 transition-colors duration-200">Dúvidas Frequentes</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-red-500 transition-colors duration-200">Política de Privacidade</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-red-500 transition-colors duration-200">Política de Garantia e Trocas</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact-info">
+                    <h3 class="font-semibold text-ciano mb-2">Contato</h3>
+                    <div class="flex items-center text-sm text-gray-600 mt-2 hover:text-red-500 transition-colors duration-200">
+                        <i class="fab fa-whatsapp text-lg mr-2"></i>
+                        <a href="https://wa.me/5518996035201">WhatsApp</a>
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600 mt-2 hover:text-red-500 transition-colors duration-200">
+                        <i class="fas fa-phone-alt text-lg mr-2"></i>
+                        <a href="tel:+5518996035201">(18) 99603-5201</a>
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600 mt-2 hover:text-red-500 transition-colors duration-200">
+                        <i class="fas fa-envelope text-lg mr-2"></i>
+                        <a href="mailto:birikap.contato@gmail.com" class="hover:underline">birikap.contato@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-payment-security">
+                <div>
+                    <p class="mb-2 font-semibold text-gray-700">Formas de Pagamento:</p>
+                    <div class="flex justify-center space-x-2">
+                        <img src="assets/visa.png" alt="Visa" class="h-6 transition-transform duration-300 hover:scale-110">
+                        <img src="assets/mastercard.png" alt="Mastercard" class="h-6 transition-transform duration-300 hover:scale-110">
+                        <img src="assets/boleto.png" alt="Boleto" class="h-6 transition-transform duration-300 hover:scale-110">
+                        <img src="assets/pix.png" alt="Pix" class="h-6 transition-transform duration-300 hover:scale-110">
+                    </div>
+                </div>
+                <div class="hidden md:block border-l border-gray-300 h-20 mx-4"></div>
+                <div>
+                    <p class="mb-2 font-semibold text-gray-700">Certificados e Segurança:</p>
+                    <div class="flex justify-center space-x-2">
+                        <img src="assets/ssl.png" alt="SSL" class="h-7 transition-transform duration-300 hover:scale-110">
+                        <img src="assets/compsegura.png" alt="Compra Segura" class="h-7 transition-transform duration-300 hover:scale-110">
+                        <img src="assets/safeBrowse.png" alt="Safe Browse" class="h-7 transition-transform duration-300 hover:scale-110">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>© Copyright Birikap - 34.003.117/0001-21 - 2025. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <div class="floating-whatsapp-button" id="open-whatsapp-modal">
+        <i class="fab fa-whatsapp"></i>
+    </div>
+
+    <div class="contact-modal" id="whatsapp-contact-modal">
+        <div class="contact-modal-content">
+            <button id="rd-close_button-kxguex0i" class="bricks--close--button rdstation-popup-js-close-button ">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 348.333 348.334">
+                    <title>Fechar</title>
+                    <path d="M336.559,68.611L231.016,174.165l105.543,105.549c15.699,15.705,15.699,41.145,0,56.85 c-7.844,7.844-18.128,11.769-28.407,11.769c-10.296,0-20.581-3.919-28.419-11.769L174.167,231.003L68.609,336.563 c-7.843,7.844-18.128,11.769-28.416,11.769c-10.285,0-20.563-3.919-28.413-11.769c-15.699-15.698-15.699-41.139,0-56.85 l105.54-105.549L11.774,68.611c-15.699-15.699-15.699-41.145,0-56.844c15.696-15.687,41.127-15.687,56.829,0l105.563,105.554 L279.721,11.767c15.705-15.687,41.139-15.687,56.832,0C352.258,27.466,352.258,52.912,336.559,68.611z"></path>
+                </svg>
+            </button>
+            <section id="rd-section-k8hluh9z" class="bricks--section rd-section">
+                <div id="rd-row-k8hluoen" class="bricks--row rd-row flex items-center">
+                    <div id="rd-column-kd8udthb" class="bricks--column rd-column flex-shrink-0">
+                        <div>
+                            <div id="rd-image-kd8udzxl" class="bricks--component bricks--component-image rd-image">
+                                <img src="assets/ico.ico" alt="Birikap Icon">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="rd-column-k8hluoen" class="bricks--column rd-column flex-grow">
+                        <div>
+                            <div id="rd-text-dk3tvgr2" class="bricks--component bricks--component-text rd-text">
+                                <p><strong>Birikap</strong></p>
+                            </div>
+                            <div id="rd-text-kd5tygr3" class="bricks--component bricks--component-text rd-text">
+                                <p><span>online</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="contact-modal-body">
+                <div id="rd-box-kd0h0qwg" class="bricks--component bricks--component-box rd-box">
+                    <div id="rd-text-kd0gxbsf" class="bricks--component bricks--component-text rd-text">
+                        <p>Gostaria de falar com nossos consultores? Me informe seu nome, email e telefone para iniciarmos uma conversa sem compromisso :)</p>
+                    </div>
+                </div>
+                <form id="whatsapp-form" class="bricks-form rd-form">
+                    <div class="bricks-form__fieldset" data-progressive-profiling="" data-multi-step="false">
+                        <div class="bricks-form__field">
+                            <label for="full-name" class="bricks-form__label">Nome Completo*</label>
+                            <input type="text" id="full-name" placeholder="Nome Completo *" class="bricks-form__input required" required>
+                        </div>
+                        <div class="bricks-form__field">
+                            <label for="email" class="bricks-form__label">Email*</label>
+                            <input type="email" id="email" placeholder="Email *" class="bricks-form__input required js-email js-field-email" required>
+                        </div>
+                        <div class="bricks-form__field">
+                            <label for="phone" class="bricks-form__label">Telefone*</label>
+                            <input type="tel" id="phone" placeholder="(DDD) XXXXX-XXXX" class="bricks-form__input required phone js-phone" required>
+                        </div>
+                    </div>
+                    <div class="bricks-form__submit flex justify-center">
+                        <button type="submit" class="bricks--component bricks--component-button rdstation-popup-js-submit-button rd-button" id="rd-button-kxguex0o">
+                            Iniciar conversa
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // JavaScript para o carrossel de banners
+        const carouselSlide = document.getElementById('banner-carousel-slide');
+        const prevButton = document.getElementById('prev-banner');
+        const nextButton = document.getElementById('next-banner');
+        const slides = Array.from(carouselSlide.children);
+        let currentIndex = 0;
+
+        function updateCarousel() {
+            slides.forEach((slide, index) => {
+                if (index === currentIndex) {
+                    slide.classList.add('active');
+                } else {
+                    slide.classList.remove('active');
+                }
+            });
+        }
+
+        prevButton.addEventListener('click', () => {
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : slides.length - 1;
+            updateCarousel();
+        });
+
+        nextButton.addEventListener('click', () => {
+            currentIndex = (currentIndex < slides.length - 1) ? currentIndex + 1 : 0;
+            updateCarousel();
+        });
+
+        setInterval(() => {
+            currentIndex = (currentIndex < slides.length - 1) ? currentIndex + 1 : 0;
+            updateCarousel();
+        }, 5000);
+        
+        // Lógica para o menu hambúrguer
+        const hamburgerMenu = document.getElementById('hamburger-menu');
+        const mainNav = document.getElementById('main-nav');
+
+        hamburgerMenu.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+        });
+
+        // Lógica do Modal do WhatsApp
+        const openWhatsappModalBtn = document.getElementById('open-whatsapp-modal');
+        const whatsappContactModal = document.getElementById('whatsapp-contact-modal');
+        const closeWhatsappModalBtn = document.getElementById('rd-close_button-kxguex0i');
+        const whatsappForm = document.getElementById('whatsapp-form');
+        const fullNameInput = document.getElementById('full-name');
+        const emailInput = document.getElementById('email');
+        const phoneInput = document.getElementById('phone');
+
+        openWhatsappModalBtn.addEventListener('click', () => {
+            whatsappContactModal.classList.add('active');
+        });
+
+        closeWhatsappModalBtn.addEventListener('click', () => {
+            whatsappContactModal.classList.remove('active');
+        });
+
+        whatsappContactModal.addEventListener('click', (event) => {
+            if (event.target === whatsappContactModal) {
+                whatsappContactModal.classList.remove('active');
+            }
+        });
+
+        whatsappForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const fullName = fullNameInput.value;
+            const email = emailInput.value;
+            const phone = phoneInput.value;
+
+            if (fullName && email && phone) {
+                const message = `Olá, meu nome é ${fullName}, meu email é ${email} e meu telefone é ${phone}. Gostaria de iniciar uma conversa.`;
+                const whatsappUrl = `https://wa.me/5518996035201?text=${encodeURIComponent(message)}`;
+                window.open(whatsappUrl, '_blank');
+                whatsappContactModal.classList.remove('active');
+                whatsappForm.reset();
+            } else {
+                console.error('Por favor, preencha todos os campos obrigatórios.');
+            }
+        });
+
+        phoneInput.addEventListener('input', (e) => {
+            let value = e.target.value.replace(/\D/g, '');
+            let formattedValue = '';
+
+            if (value.length > 0) {
+                formattedValue = `(${value.substring(0, 2)}`;
+            }
+            if (value.length >= 3) {
+                formattedValue += `) ${value.substring(2, 7)}`;
+            }
+            if (value.length > 7) {
+                formattedValue += `-${value.substring(7, 11)}`;
+            }
+            e.target.value = formattedValue;
+        });
+
+        // Lógica do Carrossel de Depoimentos
+        const testimonialsTrack = document.getElementById('testimonials-carousel-track');
+        const prevTestimonialBtn = document.getElementById('prev-testimonial');
+        const nextTestimonialBtn = document.getElementById('next-testimonial');
+        const testimonialItems = Array.from(testimonialsTrack.children);
+        let currentTestimonialIndexNew = 0;
+
+        function updateTestimonialsCarouselNew() {
+            testimonialItems.forEach((item, index) => {
+                if (index === currentTestimonialIndexNew) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            });
+        }
+
+        prevTestimonialBtn.addEventListener('click', () => {
+            currentTestimonialIndexNew = (currentTestimonialIndexNew > 0) ? currentTestimonialIndexNew - 1 : testimonialItems.length - 1;
+            updateTestimonialsCarouselNew();
+        });
+
+        nextTestimonialBtn.addEventListener('click', () => {
+            currentTestimonialIndexNew = (currentTestimonialIndexNew < testimonialItems.length - 1) ? currentTestimonialIndexNew + 1 : 0;
+            updateTestimonialsCarouselNew();
+        });
+
+        // Inicializa os carrosséis na carga da página
+        document.addEventListener('DOMContentLoaded', () => {
+            updateCarousel();
+            updateTestimonialsCarouselNew();
+        });
+    </script>
+</body>
+</html>
