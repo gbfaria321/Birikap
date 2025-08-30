@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birikap Tapetes Personalizados - Sobre Nós</title>
+    <!-- Inclui a biblioteca do Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inclui a fonte Inter do Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Inclui a biblioteca Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Ícone da página -->
+    <link rel="icon" href="assets/ico.ico" type="image/x-icon">
+    <style>
+        /* Estilos globais para a página */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Estilos do cabeçalho principal */
+        .main-header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+
+        .main-header .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 1200px;
+        }
+
+        @media (min-width: 768px) {
+            .main-header .container {
+                flex-direction: row;
+            }
+        }
+
+        /* Estilos dos links de navegação */
+        .nav-link {
+            color: #326168;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, transform 0.2s ease-in-out;
+        }
+
+        .nav-link:hover {
+            background-color: #F6706D;
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        /* Estilos do botão do WhatsApp */
+        .whatsapp-button {
+            background-color: #326168;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+
+        .whatsapp-button:hover {
+            background-color: #F6706D;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(50, 97, 104, 0.4);
+        }
+
+        /* Estilos da navegação principal */
+        .main-nav {
+            background-color: #326168;
+            border-radius: 0.5rem;
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        .main-nav .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 1200px;
+        }
+
+        @media (min-width: 768px) {
+            .main-nav .container {
+                gap: 2rem;
+            }
+        }
+
+        .main-nav .nav-link {
+            color: #ffffff;
+        }
+
+        .main-nav .nav-link:hover {
+            background-color: #F6706D;
+        }
+
+        /* Estilos do botão de acesso */
+        .access-button {
+            background-color: #F6706D;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            font-weight: 600;
+            transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+        }
+
+        .access-button:hover {
+            background-color:#326168;
+            transform: scale(1.05);
+        }
+
+        /* Estilos do dropdown menu */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            display: none;
+            background-color: white;
+            color: #326168;
+            border-radius: 0.375rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            min-width: 200px;
+            z-index: 20;
+            animation: fade-in-down 0.3s ease-out;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 0.5rem 1rem;
+            color: #326168;
+            transition: background-color 0.2s ease-in-out;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #f3f4f6;
+        }
+
+        /* Animação para o dropdown */
+        @keyframes fade-in-down {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Estilos do rodapé */
+        footer {
+            background-color: #ffffff;
+            padding-top: 2rem;
+            box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05);
+            margin-top: auto;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        footer .container {
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            padding-bottom: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .footer-links-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            width: 100%;
+        }
+
+        .footer-links-section > div {
+            flex: 1 1 auto;
+            min-width: 150px;
+            text-align: left;
+        }
+
+        .footer-links-section h3 {
+            text-align: left;
+            margin-bottom: 0.75rem;
+            color: #326168;
+        }
+
+        .footer-social-icons {
+            display: flex;
+            justify-content: flex-start;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        /* Estilo para ícones sociais no rodapé */
+        .footer-social-icons a {
+            font-size: 1.8rem;
+            transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+            color: #A8A9AB;
+        }
+
+        .footer-social-icons a:hover {
+            transform: scale(1.1);
+            color: #F6706D; /* Cor vermelha no hover */
+        }
+        
+        .footer-links-section a:hover {
+            color: #F6706D; /* Cor vermelha no hover para os links de texto */
+        }
+
+        .footer-contact-info .flex {
+            justify-content: flex-start;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-contact-info .flex i {
+            font-size: 1.2rem;
+            margin-right: 0.5rem;
+            color: #A8A9AB;
+        }
+
+        /* Estilo para os ícones de contato no rodapé */
+        .footer-contact-info a {
+            transition: color 0.2s ease-in-out;
+        }
+
+        .footer-contact-info a:hover {
+            color: #F6706D; /* Cor vermelha no hover */
+        }
+        
+        .footer-payment-security {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            width: 100%;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 2rem;
+        }
+
+        @media (max-width: 767px) {
+            .footer-payment-security {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+        }
+
+        .footer-payment-security img {
+            height: 35px;
+            margin: 0 0.4rem;
+        }
+
+        /* Estilos do copyright */
+        .footer-copyright {
+            background-color: #e2e8f0;
+            padding: 0.75rem 1rem;
+            text-align: center;
+            color: #4a5568;
+            font-size: 0.8rem;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        /* Estilos para o botão flutuante do WhatsApp e modal de contato */
+        .floating-whatsapp-button {
+            position: fixed;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            background-color: #25D366;
+            color: white;
+            padding: 1rem;
+            border-radius: 50%;
+            font-size: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 100;
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .floating-whatsapp-button:hover {
+            transform: scale(1.1);
+        }
+
+        .contact-modal {
+            position: fixed;
+            bottom: 6rem;
+            right: 1.5rem;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, visibility 0.3s ease-in-out;
+            transform: translateY(20px);
+        }
+
+        .contact-modal.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .contact-modal-content {
+            background-color: white;
+            padding: 0;
+            border-radius: 0.75rem;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            width: 90vw;
+            max-width: 420px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            max-height: 450px;
+        }
+        
+        #rd-close_button-kxguex0i {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            border: none;
+            background: transparent;
+            z-index: 9999;
+            cursor: pointer;
+            width: 40px;
+            height:40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #rd-close_button-kxguex0i svg {
+            width: 20px;
+            height: 20px;
+            fill: #326168;
+            transition: fill 0.2s ease-in-out;
+        }
+        #rd-close_button-kxguex0i:hover svg {
+            fill: #F6706D;
+        }
+
+        #rd-section-k8hluh9z {
+            background-color: #F3F4F6;
+            border-bottom-style: none;
+            border-color: #000000;
+            border-left-style: none;
+            border-radius: 0px;
+            border-right-style: none;
+            border-top-style: none;
+            border-width: 1px;
+            padding: 10px 15px;
+            display: flex;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        #rd-section-k8hluh9z > div {
+            min-height: 0px;
+        }
+
+        #rd-image-kd8udzxl {
+            margin-top: 5px;
+            margin-bottom: 5px;
+            align-self: center;
+            max-width: 40px;
+        }
+
+        #rd-image-kd8udzxl a,
+        #rd-image-kd8udzxl img {
+            width: 40px;
+            max-width: 100%;
+            height: auto;
+            border-bottom-style: none;
+            border-color: #000000;
+            border-left-style: none;
+            border-radius: 100px;
+            border-right-style: none;
+            border-top-style: none;
+            border-width: 1px;
+        }
+
+        #rd-text-dk3tvgr2 {
+            display: block;
+            margin-top: 5px;
+            margin-bottom: 0px;
+            align-self: flex-start;
+            word-break: break-word;
+            margin-left: 10px;
+            flex-grow: 1;
+        }
+
+        #rd-text-dk3tvgr2 p {
+            line-height: 1;
+        }
+
+        #rd-text-dk3tvgr2 strong {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            color: #326168;
+        }
+
+        #rd-text-kd5tygr3 {
+            display: block;
+            margin-top: 0px;
+            margin-bottom: 5px;
+            align-self: flex-start;
+            word-break: break-word;
+            margin-left: 10px;
+            flex-grow: 1;
+        }
+
+        #rd-text-kd5tygr3 span {
+            font-size: 12px;
+            color: #4b5563;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .contact-modal-body {
+            background-color: #f8fafc;
+            background-position-x: 50%;
+            background-position-y: 100%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: scroll;
+            padding: 15px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            position: relative;
+        }
+
+        #rd-box-kd0h0qwg {
+            background-color: transparent;
+            border: none;
+            border-radius: 12px;
+            padding: 12px;
+            min-height: -1px;
+            margin-top: 0;
+            margin-bottom: 15px;
+            max-width: 100%;
+            align-self: flex-start;
+            display: flex;
+            flex-direction: column;
+            box-shadow: none;
+            position: relative;
+        }
+        
+        #rd-box-kd0h0qwg::before,
+        #rd-box-kd0h0qwg::after {
+            content: none;
+        }
+
+        #rd-text-kd0gxbsf {
+            display: block;
+            margin: 0;
+            color: #4b5563;
+            font-size: 14px;
+            font-family: 'Open Sans', sans-serif;
+            word-break: break-word;
+            background-color: #FFFFFF;
+            border: 1px solid #d1d5db;
+            border-radius: 12px;
+            padding: 12px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        #whatsapp-form {
+            align-self: center;
+            width: 100%;
+            background-color: transparent;
+            padding-top: 0;
+            padding-bottom: 15px;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        #whatsapp-form .bricks-form__fieldset {
+            display: flex;
+            flex-flow: column nowrap;
+        }
+
+        #whatsapp-form .bricks-form__field {
+            margin-bottom: 10px;
+            padding: 0;
+            width: 100%;
+        }
+
+        #whatsapp-form label {
+            display: none;
+        }
+
+        #whatsapp-form input[type="email"],
+        #whatsapp-form input[type="text"],
+        #whatsapp-form input[type="tel"] {
+            color: #4a4a4a;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 14px;
+            background-color: #ffffff;
+            border: solid 1px #d1d5db;
+            border-radius: 12px;
+            height: 40px;
+            padding: 10px 15px;
+            width: 100%;
+        }
+
+        #whatsapp-form input::placeholder {
+            color: #9ca3af;
+        }
+
+
+        #whatsapp-form button[type="submit"] {
+            background-color: #326168;
+            color: #FFFFFF;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: normal;
+            height: 40px;
+            width: 90%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+            margin-top: 5px;
+        }
+        
+        #whatsapp-form button[type="submit"]:hover {
+            background-color: #F6706D;
+        }
+        
+        /* Estilos do recurso de ícone */
+        .icon-feature {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            background-color: #f8fafc;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+
+        .icon-feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .icon-feature img {
+            height: 3rem;
+            width: auto;
+            margin-bottom: 0.75rem;
+            filter: invert(40%) sepia(90%) saturate(1000%) hue-rotate(330deg) brightness(100%) contrast(100%);
+            transition: transform 0.2s ease-in-out, filter 0.2s ease-in-out;
+        }
+
+        .icon-feature:hover img {
+            transform: scale(1.1);
+            filter: invert(20%) sepia(50%) saturate(2000%) hue-rotate(180deg) brightness(80%) contrast(100%);
+        }
+
+        /* Layout de grid para ícones de destaque */
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 640px) {
+            .grid-layout.sm-cols-2 {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (min-width: 768px) {
+            .grid-layout.md-cols-3 {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+        
+    </style>
+</head>
+<body>
+
+    <!-- Início do Cabeçalho -->
+    <header class="main-header">
+        <div class="container">
+            <div class="flex items-center mb-4 md:mb-0">
+                <a href="#">
+                    <img src="assets/logo.png" alt="Birikap Tapetes Personalizados Logo" class="h-16 w-auto rounded-md">
+                </a>
+                <a href="#" class="access-button ml-4">Acessar</a>
+            </div>
+
+            <div class="flex-grow max-w-xl w-full mx-auto mb-4 md:mb-0">
+                <div class="relative w-full">
+                    <input type="text" placeholder="O que você está buscando?" class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all duration-300">
+                    <i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                </div>
+            </div>
+
+            <div class="flex items-center space-x-6">
+                <!-- Alterado "Entrar/Registrar" para "Contatos" com novo ícone -->
+                <a href="#" class="flex items-center text-gray-700 hover:text-red-500 transition-colors duration-200">
+                    <i class="fas fa-phone-alt text-2xl"></i>
+                    <span class="ml-2 hidden md:block">Contatos</span>
+                </a>
+                <a href="#" class="flex items-center text-gray-700 hover:text-red-500 transition-colors duration-200">
+                    <i class="fas fa-question-circle text-2xl"></i>
+                    <span class="ml-2 hidden md:block">Dúvidas</span>
+                </a>
+                <a href="#" class="relative flex items-center text-gray-700 hover:text-red-500 transition-colors duration-200">
+                    <i class="fas fa-tag text-2xl"></i>
+                    <span class="ml-2 hidden md:block">Promoções</span>
+                </a>
+            </div>
+        </div>
+
+        <nav class="main-nav">
+            <div class="container">
+                <a href="#main-nav" class="nav-link">Início</a>
+                <a href="#" class="nav-link">Ajuda</a>
+                <a href="#" class="nav-link">Políticas</a>
+                <a href="#" class="nav-link">Sobre Nós</a>
+                <a href="#" class="nav-link">Catálogo</a>
+                <div class="dropdown">
+                    <a href="#" class="nav-link flex items-center">
+                        Tapetes <i class="fas fa-angle-down ml-2 transition-transform group-hover:rotate-180"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="#">Tapete de Entrada para Apartamentos</a>
+                        <a href="#">Tapete para Escolas Infantis Decorativos</a>
+                        <a href="#">Tapetes Personalizados Cleankap</a>
+                        <a href="#">Tapetes Personalizados Gold</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="#" class="nav-link flex items-center">
+                        Pisos <i class="fas fa-angle-down ml-2 transition-transform group-hover:rotate-180"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="#">Pisos Laminados 100% PVC (Moeda e Bus)</a>
+                        <a href="#">Pisos para Academias e Playgrounds</a>
+                        <a href="#">Pisos para Áreas Úmidas</a>
+                    </div>
+                </div>
+                <a href="#" class="nav-link">Gramas Sintéticas</a>
+            </div>
+        </nav>
+    </header>
+    <!-- Fim do Cabeçalho -->
+
+    <main style="flex-grow: 1;">
+        <section class="bg-gray-100 py-16 px-4">
+            <div class="container mx-auto max-w-4xl text-center">
+                <h1 class="text-4xl font-bold text-gray-800 mb-4">Nossa História e Compromisso</h1>
+                <p class="text-lg text-gray-600 leading-relaxed mb-8">
+                    Na Birikap Tapetes Personalizados, nossa jornada começou com a crença de que cada espaço, seja ele residencial ou comercial, é uma tela em branco que merece um toque de personalidade e funcionalidade. Como especialistas em soluções sob medida, transformamos essa visão em realidade, combinando arte e engenharia para criar produtos que não apenas decoram, mas também elevam a experiência de cada ambiente.
+                </p>
+                <p class="text-lg text-gray-600 leading-relaxed">
+                    Nossa dedicação vai além dos tapetes. Com uma ampla e diversificada linha de produtos, atendemos às mais variadas necessidades do mercado. Oferecemos <strong>tapetes personalizados com logos e estampas exclusivas</strong>, ideais para fortalecer a identidade visual de sua marca. Além disso, somos referência em <strong>pisos técnicos</strong> para academias, playgrounds, escolas e áreas úmidas, proporcionando segurança, durabilidade e higiene. Nossa linha inclui ainda <strong>gramas sintéticas</strong> e <strong>pisos laminados 100% PVC</strong>, soluções versáteis que aliam sofisticação e resistência.
+                </p>
+            </div>
+        </section>
+
+        <section class="bg-white py-12 px-4 shadow-md">
+            <div class="container mx-auto max-w-6xl">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Nossos Pilares</h2>
+                <div class="grid-layout sm-cols-2 md-cols-3">
+                    <div class="icon-feature">
+                        <img src="https://img.icons8.com/?size=100&id=57925&format=png&color=000000" alt="Qualidade">
+                        <h3 class="font-bold text-lg">QUALIDADE SUPERIOR</h3>
+                        <p class="text-sm text-gray-600">Cada produto é resultado de um rigoroso processo de seleção de materiais e da aplicação de tecnologia de ponta.</p>
+                    </div>
+                    <div class="icon-feature">
+                        <img src="https://img.icons8.com/?size=100&id=102879&format=png&color=000000" alt="Inovação">
+                        <h3 class="font-bold text-lg">INOVAÇÃO CONSTANTE</h3>
+                        <p class="text-sm text-gray-600">Estamos sempre em busca de novas soluções e designs para oferecer o que há de mais moderno no mercado.</p>
+                    </div>
+                    <div class="icon-feature">
+                        <img src="https://img.icons8.com/?size=100&id=50897&format=png&color=000000" alt="Atendimento">
+                        <h3 class="font-bold text-lg">ATENDIMENTO PERSONALIZADO</h3>
+                        <p class="text-sm text-gray-600">Oferecemos consultoria especializada para garantir que você encontre a solução perfeita para sua necessidade.</p>
+                    </div>
+                    <div class="icon-feature">
+                        <img src="https://img.icons8.com/?size=100&id=JMIXKPDzGWkw&format=png&color=000000" alt="Sustentabilidade">
+                        <h3 class="font-bold text-lg">COMPROMISSO AMBIENTAL</h3>
+                        <p class="text-sm text-gray-600">Priorizamos práticas sustentáveis na produção, garantindo soluções eco-friendly para nossos clientes.</p>
+                    </div>
+                    <div class="icon-feature">
+                        <img src="https://img.icons8.com/?size=100&id=10483&format=png&color=000000" alt="Durabilidade">
+                        <h3 class="font-bold text-lg">DURABILIDADE E RESISTÊNCIA</h3>
+                        <p class="text-sm text-gray-600">Nossos produtos são feitos para durar, resistindo ao uso diário em ambientes de alto tráfego.</p>
+                    </div>
+                    <div class="icon-feature">
+                        <img src="https://img.icons8.com/?size=100&id=10994&format=png&color=000000" alt="Confiança">
+                        <h3 class="font-bold text-lg">CONFIANÇA E PARCERIA</h3>
+                        <p class="text-sm text-gray-600">Construímos relações de longo prazo com nossos clientes, baseadas na confiança e na excelência.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Nova seção de Ajuda -->
+        <section class="bg-gray-100 py-16 px-4 text-center">
+            <div class="container mx-auto max-w-4xl">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Precisa de Ajuda?</h2>
+                <p class="text-lg text-gray-600 leading-relaxed">
+                    Visite nossa Central de Ajuda para encontrar respostas para as perguntas mais frequentes. Se ainda tiver dúvidas, nossa equipe está pronta para ajudar.
+                </p>
+                <div class="mt-8 flex justify-center">
+                    <a href="#" class="whatsapp-button hover:bg-[#F6706D] transition-all duration-300">
+                        <i class="fas fa-question-circle text-2xl"></i>
+                        <span class="text-lg font-semibold">VISITE A CENTRAL DE AJUDA</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Início do Rodapé -->
+    <footer class="bg-white shadow-md">
+        <div class="container mx-auto px-4 text-center">
+            <div class="footer-links-section">
+                <div class="flex flex-col items-center md:items-start">
+                    <img src="assets/mini ico.png" alt="Birikap Tapetes Personalizados Logo" class="h-14 w-auto mb-3 rounded-md transition-transform duration-300 hover:scale-105">
+                    <p class="text-sm text-gray-600 mb-2">Nosso compromisso é com a qualidade, a personalização</p>
+                    <p class="text-sm text-gray-600 mb-2">e a inovação, oferecendo soluções em tapetes,</p>
+                    <p class="text-sm text-gray-600 mb-2">pisos e gramas sintéticas!</p>
+                    <div class="footer-social-icons">
+                        <a href="https://wa.me/5518996035201" target="_blank" class="text-gray-500 hover:text-red-500 transition-colors duration-300">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="https://www.instagram.com/birikap.tapetespersonalizados/" target="_blank" class="text-gray-500 hover:text-red-500 transition-colors duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=100092820801447" target="_blank" class="text-gray-500 hover:text-red-500 transition-colors duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold text-ciano mb-2">Nossos Produtos</h3>
+                    <ul class="space-y-1 text-sm">
+                        <li><a href="#" class="text-gray-600 hover:text-red-500 transition-colors duration-200">Pisos</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-red-500 transition-colors duration-200">Tapetes</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-red-500 transition-colors duration-200">Tapetes Personalizados</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-red-500 transition-colors duration-200">Gramas Sintéticas</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold text-ciano mb-2">Informações</h3>
+                    <ul class="space-y-1 text-sm">
+                        <li><a href="#" class="text-gray-600 hover:text-red-500 transition-colors duration-200">Quem Somos</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-red-500 transition-colors duration-200">Fale Conosco</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-red-500 transition-colors duration-200">Política de Privacidade</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-red-500 transition-colors duration-200">Política de Garantia e Trocas</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact-info">
+                    <h3 class="font-semibold text-ciano mb-2">Contato</h3>
+                    <div class="flex items-center text-sm text-gray-600 mt-2 hover:text-red-500 transition-colors duration-200">
+                        <i class="fab fa-whatsapp text-lg mr-2"></i>
+                        <a href="https://wa.me/5518996035201">WhatsApp</a>
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600 mt-2 hover:text-red-500 transition-colors duration-200">
+                        <i class="fas fa-phone-alt text-lg mr-2"></i>
+                        <a href="tel:+5518996035201">(18) 99603-5201</a>
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600 mt-2 hover:text-red-500 transition-colors duration-200">
+                        <i class="fas fa-envelope text-lg mr-2"></i>
+                        <a href="mailto:birikap.contato@gmail.com" class="hover:underline">birikap.contato@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-payment-security">
+                <div>
+                    <p class="mb-2 font-semibold text-gray-700">Formas de Pagamento:</p>
+                    <div class="flex justify-center space-x-2">
+                        <img src="assets/visa.png" alt="Visa" class="h-6 transition-transform duration-300 hover:scale-110">
+                        <img src="assets/mastercard.png" alt="Mastercard" class="h-6 transition-transform duration-300 hover:scale-110">
+                        <img src="assets/boleto.png" alt="Boleto" class="h-6 transition-transform duration-300 hover:scale-110">
+                        <img src="assets/pix.png" alt="Pix" class="h-6 transition-transform duration-300 hover:scale-110">
+                    </div>
+                </div>
+                <div class="hidden md:block border-l border-gray-300 h-20 mx-4"></div>
+                <div>
+                    <p class="mb-2 font-semibold text-gray-700">Certificados e Segurança:</p>
+                    <div class="flex justify-center space-x-2">
+                        <img src="assets/ssl.png" alt="SSL" class="h-7 transition-transform duration-300 hover:scale-110">
+                        <img src="assets/compsegura.png" alt="Compra Segura" class="h-7 transition-transform duration-300 hover:scale-110">
+                        <img src="assets/safeBrowse.png" alt="Safe Browse" class="h-7 transition-transform duration-300 hover:scale-110">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>© Copyright Birikap - 34.003.117/0001-21 - 2025. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    <!-- Fim do Rodapé -->
+
+    <div class="floating-whatsapp-button" id="open-whatsapp-modal">
+        <i class="fab fa-whatsapp"></i>
+    </div>
+
+    <div class="contact-modal" id="whatsapp-contact-modal">
+        <div class="contact-modal-content">
+            <button id="rd-close_button-kxguex0i" class="bricks--close--button rdstation-popup-js-close-button ">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 348.333 348.334">
+                    <title>Fechar</title>
+                    <path d="M336.559,68.611L231.016,174.165l105.543,105.549c15.699,15.705,15.699,41.145,0,56.85 c-7.844,7.844-18.128,11.769-28.407,11.769c-10.296,0-20.581-3.919-28.419-11.769L174.167,231.003L68.609,336.563 c-7.843,7.844-18.128,11.769-28.416,11.769c-10.285,0-20.563-3.919-28.413-11.769c-15.699-15.698-15.699-41.139,0-56.85 l105.54-105.549L11.774,68.611c-15.699-15.699-15.699-41.145,0-56.844c15.696-15.687,41.127-15.687,56.829,0l105.563,105.554 L279.721,11.767c15.705-15.687,41.139-15.687,56.832,0C352.258,27.466,352.258,52.912,336.559,68.611z"></path>
+                </svg>
+            </button>
+            <section id="rd-section-k8hluh9z" class="bricks--section rd-section">
+                <div id="rd-row-k8hluoen" class="bricks--row rd-row flex items-center">
+                    <div id="rd-column-kd8udthb" class="bricks--column rd-column flex-shrink-0">
+                        <div>
+                            <div id="rd-image-kd8udzxl" class="bricks--component bricks--component-image rd-image">
+                                <img src="assets/ico.ico" alt="Birikap Icon">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="rd-column-k8hluoen" class="bricks--column rd-column flex-grow">
+                        <div>
+                            <div id="rd-text-dk3tvgr2" class="bricks--component bricks--component-text rd-text">
+                                <p><strong>Birikap</strong></p>
+                            </div>
+                            <div id="rd-text-kd5tygr3" class="bricks--component bricks--component-text rd-text">
+                                <p><span>online</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="contact-modal-body">
+                <div id="rd-box-kd0h0qwg" class="bricks--component bricks--component-box rd-box">
+                    <div id="rd-text-kd0gxbsf" class="bricks--component bricks--component-text rd-text">
+                        <p>Gostaria de falar com nossos consultores? Me informe seu nome, email e telefone para iniciarmos uma conversa sem compromisso :)</p>
+                    </div>
+                </div>
+                <form id="whatsapp-form" class="bricks-form rd-form">
+                    <div class="bricks-form__fieldset" data-progressive-profiling="" data-multi-step="false">
+                        <div class="bricks-form__field">
+                            <label for="full-name" class="bricks-form__label">Nome Completo*</label>
+                            <input type="text" id="full-name" placeholder="Nome Completo *" class="bricks-form__input required" required>
+                        </div>
+                        <div class="bricks-form__field">
+                            <label for="email" class="bricks-form__label">Email*</label>
+                            <input type="email" id="email" placeholder="Email *" class="bricks-form__input required js-email js-field-email" required>
+                        </div>
+                        <div class="bricks-form__field">
+                            <label for="phone" class="bricks-form__label">Telefone*</label>
+                            <input type="tel" id="phone" placeholder="(DDD) XXXXX-XXXX" class="bricks-form__input required phone js-phone" required>
+                        </div>
+                    </div>
+                    <div class="bricks-form__submit flex justify-center">
+                        <button type="submit" class="bricks--component bricks--component-button rdstation-popup-js-submit-button rd-button" id="rd-button-kxguex0o">
+                            Iniciar conversa
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Lógica do Modal do WhatsApp
+        const openWhatsappModalBtn = document.getElementById('open-whatsapp-modal');
+        const whatsappContactModal = document.getElementById('whatsapp-contact-modal');
+        const closeWhatsappModalBtn = document.getElementById('rd-close_button-kxguex0i');
+        const whatsappForm = document.getElementById('whatsapp-form');
+        const fullNameInput = document.getElementById('full-name');
+        const emailInput = document.getElementById('email');
+        const phoneInput = document.getElementById('phone');
+
+        openWhatsappModalBtn.addEventListener('click', () => {
+            whatsappContactModal.classList.add('active');
+        });
+
+        closeWhatsappModalBtn.addEventListener('click', () => {
+            whatsappContactModal.classList.remove('active');
+        });
+
+        whatsappContactModal.addEventListener('click', (event) => {
+            if (event.target === whatsappContactModal) {
+                whatsappContactModal.classList.remove('active');
+            }
+        });
+
+        whatsappForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const fullName = fullNameInput.value;
+            const email = emailInput.value;
+            const phone = phoneInput.value;
+
+            if (fullName && email && phone) {
+                const message = `Olá, meu nome é ${fullName}, meu email é ${email} e meu telefone é ${phone}. Gostaria de iniciar uma conversa.`;
+                const whatsappUrl = `https://wa.me/5518996035201?text=${encodeURIComponent(message)}`;
+                window.open(whatsappUrl, '_blank');
+                whatsappContactModal.classList.remove('active');
+                whatsappForm.reset();
+            } else {
+                console.error('Por favor, preencha todos os campos obrigatórios.');
+            }
+        });
+
+        phoneInput.addEventListener('input', (e) => {
+            let value = e.target.value.replace(/\D/g, '');
+            let formattedValue = '';
+
+            if (value.length > 0) {
+                formattedValue = `(${value.substring(0, 2)}`;
+            }
+            if (value.length >= 3) {
+                formattedValue += `) ${value.substring(2, 7)}`;
+            }
+            if (value.length > 7) {
+                formattedValue += `-${value.substring(7, 11)}`;
+            }
+            e.target.value = formattedValue;
+        });
+    </script>
+</body>
+</html>

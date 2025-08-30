@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="86" height="86" viewBox="0 0 86 86">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="Caminho_124" data-name="Caminho 124" d="M0-86H86V0H0Z" fill="#314785"/>
+    </clipPath>
+  </defs>
+  <g id="piso-cozinha" transform="translate(0 0)">
+    <g id="Grupo_63" data-name="Grupo 63" transform="translate(0 86)" clip-path="url(#clip-path)">
+      <path id="Caminho_116" data-name="Caminho 116" d="M0,0A15.71,15.71,0,0,1-15.71,15.71,15.71,15.71,0,0,1-31.42,0,15.71,15.71,0,0,1-15.71-15.71,15.71,15.71,0,0,1,0,0Z" transform="translate(32.679 -20.442)" fill="none" stroke="#314785" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.52"/>
+      <path id="Caminho_117" data-name="Caminho 117" d="M0,0A4.746,4.746,0,0,0,4.741-4.741,4.746,4.746,0,0,0,0-9.481,4.746,4.746,0,0,0-4.741-4.741,4.746,4.746,0,0,0,0,0Z" transform="translate(16.97 -15.701)" fill="none" stroke="#314785" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.52"/>
+      <path id="Caminho_118" data-name="Caminho 118" d="M0,0A15.7,15.7,0,0,0-13.731,8.078h0L-39.276,51.536A15.685,15.685,0,0,1-26.61,45.117,15.71,15.71,0,0,1-10.9,60.827a15.635,15.635,0,0,1-1.942,7.568h0l26.49-44.9,0,0A15.72,15.72,0,0,0,0,0Z" transform="translate(43.579 -81.268)" fill="none" stroke="#314785" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.52"/>
+      <path id="Caminho_119" data-name="Caminho 119" d="M0,0H-24.625a16.226,16.226,0,0,1-.769,1.528l0,0-26.49,44.9a15.705,15.705,0,0,1-13.769,8.141h35.064A3.958,3.958,0,0,0-27.16,52.6L1.833,3.18A2.118,2.118,0,0,0,0,0Z" transform="translate(82.619 -59.306)" fill="none" stroke="#314785" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.52"/>
+      <path id="Caminho_120" data-name="Caminho 120" d="M0,0,4.561-7.774H-23.753L-28.123-.368q-.1.185-.211.368Z" transform="translate(58.861 -12.505)" fill="none" stroke="#314785" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.52"/>
+      <path id="Caminho_121" data-name="Caminho 121" d="M0,0H28.288l4.561-7.774H4.586Z" transform="translate(39.787 -28.211)" fill="none" stroke="#314785" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.52"/>
+      <path id="Caminho_122" data-name="Caminho 122" d="M0,0H-8.873L-13.46,7.774H14.778L19.338,0H5.879" transform="translate(62.419 -51.532)" fill="none" stroke="#314785" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.52"/>
+      <path id="Caminho_123" data-name="Caminho 123" d="M0,0A10.242,10.242,0,0,0-9.793-7.286,10.237,10.237,0,0,0-20.018,2.939,10.237,10.237,0,0,0-9.793,13.165,10.242,10.242,0,0,0,0,5.879" transform="translate(26.762 -23.381)" fill="none" stroke="#314785" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.52"/>
+    </g>
+  </g>
+</svg>
